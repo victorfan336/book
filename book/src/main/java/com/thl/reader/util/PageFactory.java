@@ -256,6 +256,7 @@ public class PageFactory {
         }
 
         Canvas c = new Canvas(bitmap);
+        c.
         c.drawBitmap(getBgBitmap(), 0, 0, null);
         mPaint.setTextSize(getFontSize());
         mPaint.setColor(getTextColor());
@@ -294,7 +295,7 @@ public class PageFactory {
         float height = CommonUtil.convertDpToPixel(mContext,10);
         rect1.set(rect1Left, mHeight - height - statusMarginBottom,rect1Left + width, mHeight - statusMarginBottom);
         rect2.set(rect1Left + mBorderWidth, mHeight - height + mBorderWidth - statusMarginBottom, rect1Left + width - mBorderWidth, mHeight - mBorderWidth - statusMarginBottom);
-        c.save(Canvas.CLIP_SAVE_FLAG);
+        c.save();
         c.clipRect(rect2, Region.Op.DIFFERENCE);
         c.drawRect(rect1, mBatterryPaint);
         c.restore();

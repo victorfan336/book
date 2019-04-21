@@ -16,10 +16,10 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         resConfigs "zh"
-        ndk {
-            // 设置支持的SO库架构
-            abiFilters 'armeabi'
-        }
+//        ndk {
+//            // 设置支持的SO库架构
+//            abiFilters 'armeabi'
+//        }
     }
     buildTypes {
         release {
@@ -37,8 +37,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile rootProject.ext.dependencies["design"]
-    compile 'org.litepal.android:core:1.6.0'
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.dependencies["design"]
+    api 'org.litepal.android:core:1.6.0'
+    api 'com.astuetz:pagerslidingtabstrip:1.0.1'
+
 }

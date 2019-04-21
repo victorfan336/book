@@ -18,7 +18,7 @@ public class BookApplication extends AppContext {
         super.onCreate();
         MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
-        Bugly.init(this, Config.BUGLY_KEY, true);   //更新与崩溃统计初始化
+//        Bugly.init(this, Config.BUGLY_KEY, true);   //更新与崩溃统计初始化
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle bundle) {
